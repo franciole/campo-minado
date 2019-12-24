@@ -1,9 +1,9 @@
-package br.com.cod3r.com.cm.modelo;
+package br.com.cod3r.cm.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.cod3r.com.cm.excecao.ExplosaoException;
+import br.com.cod3r.cm.excecao.ExplosaoException;
 
 public class Campo {
 
@@ -66,4 +66,21 @@ public class Campo {
 	boolean vizinhancaSegura() {
 		return vizinhos.stream().noneMatch(v -> v.minado);
 	}
+
+	void minar() {
+		minado = true;
+	}
+
+	public boolean isMarcado() {
+		return marcado;
+	}
+
+	public boolean isAberto() {
+		return aberto;
+	}
+
+	public boolean isFechado() {
+		return !isAberto();
+	}
+
 }
